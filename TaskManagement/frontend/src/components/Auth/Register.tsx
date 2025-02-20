@@ -16,7 +16,6 @@ const Register: React.FC = () => {
       const res = await api.post('/auth/register', { username, password });
       login(res.data.token);
       navigate('/tasks');
-      window.location.reload();
     } catch (err: any) {
       setError(err.response?.data?.message || 'Registration failed');
     }
